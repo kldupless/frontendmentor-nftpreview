@@ -89,9 +89,136 @@ body {
 h1 {
     color: hsl(0, 0%, 100%);
     font-weight: 600;
-    font-size: 36px;
+    font-size: 24px;
+}
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 .card {
     background: hsl(216, 50%, 16%);
+    max-width: 25vw;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+    border-radius: .75em;
+    box-shadow: 0px 0px 50px 1px hsl(217, 54%, 8%);
 }
+
+.card > div {
+    padding-bottom: 1em;
+}
+.nft-info{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.nft-link{
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+.nft-link:hover{
+    color: hsl(178, 100%, 50%);
+}
+
+.nft-img {
+    border-radius: .75em;
+    margin-bottom: 1em;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+.nft-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .3s ease;
+  background-color: hsl(178, 100%, 50%, 0.4);
+}
+
+.nft-img:hover .nft-overlay {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.nft-overlay > img {
+  position: absolute;
+  width: 3em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+.view-icon {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.price-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price {
+    color: hsl(178, 100%, 50%);
+}
+
+.detail {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.detail > img {
+    height: 1em;
+    margin-right: .25em;
+}
+
+.creator-info {
+  border-top: 1px solid hsl(215, 32%, 27%);
+  padding: 1em 0;
+  font-size: 16px;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.creator-avatar {
+  height: 2em;
+  width: 2em;
+  border-radius: 100%;
+  margin-right: 1em;
+  border: 1px solid hsl(0, 0%, 100%);
+  background-clip: border-box;
+  background: center / contain no-repeat url('/images/image-avatar.png');
+}
+
+@media screen and (max-width: 375px) {
+  .card{
+    max-width: 90vw;
+  }
+}
+
